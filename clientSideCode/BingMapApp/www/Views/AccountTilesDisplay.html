@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!--<script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>-->
+    <!--<script src="scripts/angular-bing-maps.js"></script>-->
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/site.css" rel="stylesheet" />
+    <link href="../css/custom.css" rel="stylesheet" />
+    <link href="../css/jquery.bxslider.css" rel="stylesheet" />
+    <link href="../font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+    <script src="../scripts/winstore-jscompat.js"></script>
+    <script src="../scripts/jquery-1.11.1.min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/angular.min.js"></script>    
+    <script src="../scripts/controllers/app.js"></script>
+    <script src="../scripts/controllers/accounttilescontroller.js"></script>
+    <script src="../scripts/jquery.bxslider.min.js"></script>    
+</head>
+<body ng-app="myapp" ng-controller="accounttilescntrl">
+    <div id="wrapper">
+        <!-- header -->
+        <div id="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a id="backpagediv" height="28" width="28" style="padding-top:0px; margin-top:10px; color:white;" class="pull-left" ng-click="backtoPage()">
+                            <i class="fa fa-mail-reply fa-2x"></i>
+                        </a>
+                        <a id="menu-toggle" href="#" class="glyphicon btn-menu toggle" style="float:right">
+                            <i class="fa fa-bars fa-2x"></i>
+                        </a>
+                        <div style="padding-left:50px">
+                            <img id="menu-logo" src="../images/XView.png" height="36" width="36" />
+                            <a id="menu-title">Executive Dashboard</a>
+                            <div style="float:right">
+                                <div id="Loading" style="display:none;"><img src="../images/image_961403.gif" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="jumbo">
+        </div>
+        <div ng-include="'side-bar.html'"></div>
+
+        <!-- Page content -->
+        <div class="container-fluid" style="margin-top:70px" id="tiles">
+            {{message}}
+           <!--<div ng-bind="dmlistofNames"></div>-->
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="tilespositions" style="height:100%">
+                        <table class="dmclassname col-xs-12 col-sm-12">
+                            <tr  >
+                                <td style="padding:3px; padding-left:6px; background-color: #303030" class="squaretiles ">
+                                    <div class="metro-tile metro-tile-small metro-tile-store" ng-click="openRevenue()">
+                                        <div class="projectiondiv"> Revenue <br /> <i class="fa fa-bar-chart fa-3x" ng-click="openRevenue()"></i> </div>
+                                    </div>
+                                </td>
+
+                                <td style="padding:3px; padding-left:6px; background-color: #303030" class="costdeliveryclass">
+                                    <div class="metro-tile metro-tile-small metro-tile-openposition" ng-click="openPositions()">
+                                        <div class="projectiondiv"> Open Positions <br /> <i class="fa fa-bar-chart fa-3x" ng-click="openPositions()"></i> </div>
+                                    </div>
+                                </td>
+                                <!--<td style="padding:3px; padding-right:6px;" class="costdeliveryclass">
+                                    <div data-toggle="modal" data-target="#myModal" class="metro-tile metro-tile-small metro-tile-openposition">
+                                        <div class="projectiondiv">
+                                            Open Positions<br /> <i class="fa fa-line-chart fa-3x"></i>
+                                        </div>
+                                    </div>
+                                </td>-->
+                            </tr>
+
+                            <tr>
+                               
+                                <td style="padding:3px;padding-left:6px; background-color: #303030" class="squaretiles">
+                                    <div data-toggle="modal" data-target="#myModal" class="metro-tile metro-tile-small metro-tile-Atterations" ng-click="attrition()">
+                                        <div class="projectiondiv">
+                                            Attritions <br />
+                                          
+                                                <i class="fa fa-male fa-3x" ng-click="attrition()"></i>
+                                            
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--<td style="padding:3px; padding-left:6px;" class="costdeliveryclass">
+                                    <div class="metro-tile metro-tile-small metro-tile-Cost" ng-click="cod()">
+                                        <div class="projectiondiv"> Cost Of Delivery <br /> <i class="fa fa-bar-chart fa-3x" ng-click="cod()"></i> </div>
+                                    </div>
+                                </td>-->
+                                <td style="padding:3px; padding-left:6px; background-color: #303030" class="costdeliveryclass">
+                                    <div class="metro-tile metro-tile-small metro-tile-Cost" ng-click="cod()">
+                                        <div class="projectiondiv"> Cost Of Delivery <br /> <i class="fa fa-bar-chart fa-3x" ng-click="cod()"></i> </div>
+                                    </div>
+                                </td>
+
+                                
+                            </tr>
+
+                            <tr>
+                                <td style="padding:3px;padding-left:6px; background-color: #303030" class="squaretiles">
+                                <div ng-click="gotochmparameters()" class="metro-tile metro-tile-small metro-tile-health" >
+                                    <div class="projectiondiv"> CHM Parameters <br /><i class="fa fa-thumbs-o-up fa-3x" ng-click="gotochmparameters()"></i></div> 
+                                    </div>
+                                </td>
+                                <td style="padding:3px; padding-left:6px; background-color: #303030" class="costdeliveryclass">
+                                    <div ng-click="customerSatification()" class="metro-tile metro-tile-small metro-tile-gainLoss">
+                                        <div class="projectiondiv"> Customer Satification <br /> <i class="fa fa-smile-o fa-3x"></i></div>
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2" style="padding:3px; padding-left:6px; background-color: #303030" class="squaretiles">
+                                    <div class="metro-tile metro-tile-small metro-tile-msg" style="text-align:center" ng-click="consolidated();">
+                                        <div class="projectiondiv">
+                                            Consolidated Dashboard<br />
+                                            <i class="fa fa-table fa-3x" style=""></i></div>
+
+                                        </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row" style="margin-top:40px">
+                <div class="col-md-12 nopadding">
+                    <ul class="bxslider" style="height:30px; font-size:15px; background-color:#A9D0F5">
+                        <li style="color:#10168e;">Welcome to Rashmi! Rashmi joining as HR Head for PSP.</li>
+                        <li style="color:#931a34;">Account planning first review with Bala completed</li>
+                        <li style="color:#10168e;">MBR- Feb’16 completed with Customers. </li>
+                        <li style="color:#931a34;">RideBuzz-CarPool App presented to Sr.Management.</li>
+                        <li style="color:#10168e;">Coming up - Executive Dashboard – ExView, WiproTechTalk – Technical discussion forum.</li>
+                        <li style="color:#931a34;">Moonshot hackers – Place to get recognition for your Ideas.</li>
+                    </ul>
+                </div>
+            </div>-->
+        </div>
+
+        <!-- footer -->
+        <div ng-include="'footer.html'"></div>
+
+    <!-- Modal popup -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top:40px">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--<div class="modal-header" style="background-color: rgb(24,98,173);">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Work in Progress...
+                    </h4>
+                </div>-->
+                <div class="modal-body">
+                    <!--Work in Progress-->
+                    <img src="../images/coming_soon.PNG" width="340"/>
+                </div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-primary">Show</button>-->
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Logout</title>
+    <script src="../scripts/jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            window.localStorage.clear();
+            window.location.href = "../master.html";
+        })
+    </script>
+    <style>
+        div {
+            background-color:rgba(0,0,0,0.6);
+            color:white;
+            align-content:center;
+            font-size:30px;
+        
+        }
+    </style>
+</head>
+<body>
+    <div>Logging you out...</div>
+</body>
+</html>
