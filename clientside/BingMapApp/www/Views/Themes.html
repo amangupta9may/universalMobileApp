@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../scripts/winstore-jscompat.js"></script>
+    <script src="../scripts/jquery-1.11.1.min.js"></script>
+    <script src="../scripts/customcheckbox.js"></script>
+    <script src="../scripts/angular.min.js"></script>
+    <script src="../scripts/controllers/app.js"></script>
+    <script src="../scripts/controllers/Themesctrl.js"></script>
+
+    <link href="../css/checkboxmaps.css" rel="stylesheet"/>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../css/site.css" rel="stylesheet"/>
+    <link href="../css/custom.css" rel="stylesheet"/>
+
+
+</head>
+<body ng-app="myapp" ng-controller="ThemesCtrl">
+<div id="header" class="checking">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <a id="backpagediv" height="28" width="28" style="padding-top: 0px; margin-top: 10px; color: white;" class="pull-left" ng-click="backtoPage()">
+                    <i class="fa fa-mail-reply fa-2x"></i>
+                </a>
+                <div style="padding-left: 50px">
+                    <img id="menu-logo" src="../images/XView.png" height="36" width="36"/>
+                    <a id="menu-title">Executive Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="nextbutton1" ng-click="next1()" style="background-color: transparent; height: 30px; width: 30px; margin-top: 250px; right: 0; position:absolute; display: inline; text-align: center; z-index: 100;">
+                    <div class="fa fa-caret-right black fa-3x" style="margin-top: 2px"></div>
+                </div>
+                <div id="nextbutton2" ng-click="next2()" style="display: none;background-color: transparent; height: 30px; width: 30px; margin-top: 250px; right: 0; position:absolute; text-align: center; z-index: 100;">
+                    <div class="fa fa-caret-right black fa-3x" style="margin-top: 2px"></div>
+                </div>
+                <div id="nextbutton3" ng-click="next3()" style="display: none; background-color: transparent; height: 30px; width: 30px; margin-top: 250px; right: 0; position:absolute; text-align: center; z-index: 100;">
+                    <div class="fa fa-caret-right black fa-3x" style="margin-top: 2px"></div>
+                </div>
+                <div id="prevbutton1" ng-click="prev1()" style="display: none; background-color: transparent; height: 30px; width: 30px; margin-top: 250px; left: 0; position:absolute; text-align: center; z-index: 100;">
+                    <div class="fa fa-caret-left black fa-3x" style="margin-top: 2px"></div>
+                </div>
+                <div id="prevbutton2" ng-click="prev2()" style="display: none;background-color: transparent; height: 30px; width: 30px; margin-top: 250px; left: 0; position:absolute; text-align: center; z-index: 100;">
+                    <div class="fa fa-caret-left black fa-3x" style="margin-top: 2px"></div>
+                </div>
+                <div id="prevbutton3" ng-click="prev3()" style="display: none; background-color: transparent; height: 30px; width: 30px; margin-top: 250px; left: 0; position:absolute; text-align: center; z-index: 100;">
+                    <div class="fa fa-caret-left black fa-3x" style="margin-top: 2px"></div>
+                </div>
+                <div id="theme1" style="width: 100%; text-align: center; margin-top: 30px;" ng-click="theme1()">
+                    <img src="../images/theme0.jpg" style="width: 100%; margin-bottom: 50px; z-index: 10;"/>
+                </div>
+                <div id="theme2" style="display: none; width: 100%; text-align: center; margin-top: 30px;" ng-click="theme2()">
+                    <img src="../images/theme1.jpg" style="width: 100%; margin-bottom: 50px; z-index: 10;"/>
+                </div>
+                <div id="theme3" style="display: none; width: 100%; text-align: center; margin-top: 30px;" ng-click="theme3()">
+                    <img src="../images/theme2.jpg" style="width: 100%; margin-bottom: 50px; z-index: 10;"/>
+                </div>
+                <div id="theme4" style="display: none; width: 100%; text-align: center; margin-top: 30px;" ng-click="theme4()">
+                    <img src="../images/theme3.jpg" style="width: 100%; margin-bottom: 50px; z-index: 10;"/>
+                </div>
+            </div>
+
+            </div>
+        </div>
+
+</body>
+</html>

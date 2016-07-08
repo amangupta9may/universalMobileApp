@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!--<script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>-->
+    <!--<script src="scripts/angular-bing-maps.js"></script>-->
+    <script src="../scripts/winstore-jscompat.js"></script>
+    <script src="../scripts/jquery-1.11.1.min.js"></script>
+    <script src="../scripts/angular.min.js"></script>    
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/controllers/app.js"></script>
+    <script src="../scripts/controllers/openpositioncontroller.js"></script>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/site.css" rel="stylesheet" />
+    <link href="../css/custom.css" rel="stylesheet" />
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    
+
+    
+    <style>
+           /*hr {
+            -moz-border-bottom-colors: none;
+            -moz-border-image: none;
+            -moz-border-left-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-top-colors: none;
+            border-color: #97cbe2;
+            border-style: solid none;
+            border-width: 1px 0;
+        }
+
+           table thead tr th{
+               background-color:skyblue;
+               text-align:center;
+           }*/
+    </style>
+</head>
+<body ng-app="myapp" ng-controller="openpositionctrl">
+    <div id="wrapper">
+        <!-- header -->
+        <div id="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a id="backpagediv" height="28" width="28" style="padding-top:0px; margin-top:10px; color:white;" class="pull-left" ng-click="backtoPage()">
+                            <i class="fa fa-mail-reply fa-2x"></i>
+                        </a>
+                        <a id="menu-toggle" href="#" class="glyphicon btn-menu toggle" style="float:right">
+                            <i class="fa fa-bars fa-2x"></i>
+                        </a>
+                        <div style="padding-left:50px">
+                            <img id="menu-logo" src="../images/XView.png" height="36" width="36" />
+                            <a id="menu-title">Executive Dashboard</a>
+                            <div style="float:right">
+                                <div id="Loading" style="display:none;"><img src="../images/image_961403.gif" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="jumbo">
+        </div>
+        <div ng-include="'side-bar.html'"></div>
+        
+        <div class="container" style="padding-top: 60px;margin-bottom: 40px">
+            <div>  
+                <h4>Open Positions</h4>              
+                <table class="table table-striped">
+                    <!--<caption><b>Open Positions</b></caption>-->
+                    <thead>
+                        <tr >
+                            <th>Opportunity</th>
+                            <th>Tech</th>
+                            <th>Band</th>
+                            <th>Service</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="x in openPositions">
+                            <td>{{x["Opportunity Name"]}} <script>changecolor()</script></td>
+                            <td>{{x.Tech}}</td>
+                            <td>{{x.Band}}</td>
+                            <td>{{x["Service line"]}}</td>
+                            <td>{{x["Start date of Billing"]}}</td>
+                        </tr>
+                    </tbody>
+                </table>              
+            </div>
+           
+            <div>  
+                <h4>Total no. of Positions</h4>      
+                <table class="table table-striped">             
+                    <thead>
+                        <tr>
+                            <th >OnSite</th>
+                            <th>OffShore</th>                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{onsite}}</td>
+                            <td>{{offshore}}</td>                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+           
+            <!--<div>
+                <h4>Positions Identified </h4>
+                <table class="table table-striped">                    
+                    <thead>
+                        <tr>
+                            <th>OnSite</th>
+                            <th>OffShore</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>100</td>
+                            <td>40</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>-->
+            
+        </div>
+        <!-- footer -->
+        <div ng-include="'footer.html'"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "android": {
+    "release": {
+      "keystore": "c:\\universalapp.keystore",
+      "storePassword": "chadke123",
+      "alias": "chadke",
+      "password": "chadke123",
+      "keystoreType": ""
+    }
+  },
+  "windows": {
+    "release": {
+      "packageCertificateKeyFile": "res\\native\\windows\\CordovaApp.pfx"
+    }
+  }
+}

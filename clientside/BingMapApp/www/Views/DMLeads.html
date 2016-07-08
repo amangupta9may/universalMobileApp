@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Leads</title>
+    <!--<script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>-->
+    <!--<script src="scripts/angular-bing-maps.js"></script>-->
+    <script src="../scripts/winstore-jscompat.js"></script>
+    <script src="../scripts/jquery-1.11.1.min.js"></script>
+    <script src="../scripts/angular.min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/controllers/app.js"></script>
+    <script src="../scripts/controllers/DMLeadController.js"></script>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/site.css" rel="stylesheet" />
+    <link href="../css/custom.css" rel="stylesheet" />
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+</head>
+<body ng-app="myapp" ng-controller="dmLeadctrl">
+    <div id="wrapper">
+        <!-- header -->
+        <div id="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a id="backpagediv" height="28" width="28" style="padding-top:0px; margin-top:10px; color:white;" class="pull-left" ng-click="backtoPage()">
+                            <i class="fa fa-mail-reply fa-2x"></i>
+                        </a>
+                        <a id="menu-toggle" href="#" class="glyphicon btn-menu toggle" style="float:right">
+                            <i class="fa fa-bars fa-2x"></i>
+                        </a>
+                        <div style="padding-left:50px">
+                            <img id="menu-logo" src="../images/XView.png" height="36" width="36" />
+                            <a id="menu-title">Executive Dashboard</a>
+                            <div style="float:right">
+                                <div id="Loading" style="display:none;"><img src="../images/image_961403.gif" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="jumbo">
+        </div>
+        <div ng-include="'side-bar.html'"></div>
+
+        <div class="container" style="padding-top:10px; margin-top:50px">
+            <div>
+                <h4>Leads</h4>
+                <table class="table table-striped">
+                    <!--<caption><b>Open Positions</b></caption>-->
+                    <thead>
+                        <tr>
+                            <th>DM</th>
+                            <th>Lead</th>
+                            <th>Designation</th>
+                            <th>Project Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="x in dmleads">
+                            <td>{{x.DeliveryManager}}<script>changecolor()</script></td>
+                            <td>{{x.LeadName}}</td>
+                            <td>{{x.LeadDesignation}}</td>
+                            <td>{{x.ProjectCode}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                <br />
+            </div>
+        </div>
+        <!-- footer -->
+        <div ng-include="'footer.html'"></div>
+    </div>
+</body>
+</html>
