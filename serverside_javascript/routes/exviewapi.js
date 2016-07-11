@@ -108,13 +108,13 @@ router.get('/changethemecode/:themecode/:uid/:type',function(request,response,ne
     readOrCreateDatabase(function (database) {
         readOrCreateCollection(database, function (collection) {
             var query = 'SELECT * from root r where r.uid="' + request.params.uid + '" and r.type="' + request.params.type + '" ';
-            console.log(query);
+            //console.log(query);
             client.queryDocuments(collection._self,query).toArray(function (err, docs) {
                 if (err) {
                     throw (err);
                 }
                 document = docs;
-                console.log(document[0]);
+                //console.log(document[0]);
                 document[0].themecode = request.params.themecode;
 
                 var selfLink = document[0]._self ;
